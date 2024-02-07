@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="m-5">
+    <input id="checkbox1" type="checkbox"/>
+    <label for="checkbox1">I have a CAR</label><br>
+    <input id="checkbox2" type="checkbox"/>
+    <label for="checkbox2">I don't have a CAR</label><br>
+    <input id="checkbox3" type="checkbox"/>
+    <label for="checkbox3">I am planning to buy a CAR</label><br>
+    <input id="checkbox4" type="checkbox"/>
+    <label for="checkbox4">My CAR was stolen</label><br>
+    <input id="checkbox5" type="checkbox"/>
+    <label for="checkbox5">I want a CAR but I don't have money</label><br>
+    </div>
+
+    <div class="progresses">
+    <div class="progress-fill" id="progress-fill"></div>
+    </div>
+</body>
+<style>
+    body{
+        padding-right: 10%;
+    }
+ .progresses{
+    height: 20px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: purple;
+    margin-left: 20px;
+ }
+ .progress-fill{
+    background-color: yellow;
+    border-radius: 20px;
+    height: 20px;
+    width: 0%;
+    transition: 0.6s;
+ }
+</style>
+<script>
+ const checkbox1 = document.getElementById("checkbox1");
+ const checkbox2 = document.getElementById("checkbox2");
+ const checkbox3 = document.getElementById("checkbox3");
+ const checkbox4 = document.getElementById("checkbox4");
+ const checkbox5 = document.getElementById("checkbox5");
+ const processAction = (e)=>{
+    const status = e.target.checked
+    console.log(status, 'hello mr. Status')
+    const progressFill = document.getElementsByClassName
+    ('progress-fill')
+    const width = progressFill[0].style.width
+    console.log(width);
+    const calculatedWidth = Number(width.substring(0,width.length-1))
+    if(status){
+        progressFill[0].style.width = `${calculatedWidth+20}%`
+    } else {
+        console.log('allright')
+        progressFill[0].style.width = `${calculatedWidth-20}%`;
+    }
+ }
+
+ checkbox1.addEventListener("click", processAction)
+ checkbox2.addEventListener("click", processAction)
+ checkbox3.addEventListener("click", processAction)
+ checkbox4.addEventListener("click", processAction)
+ checkbox5.addEventListener("click", processAction)
+</script>
+</html>

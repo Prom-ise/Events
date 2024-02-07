@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.css">
+</head>
+<style>
+    body{
+        background-color: rgb(123, 56, 22);
+    }
+</style>
+<body id="body">
+    <button class="btn btn-primary" id="button">CHANGE COLOUR</button>
+    <input type="text" id="inp" value="Promise">
+    <div class="container shadow-sm " id="result"></div>
+
+    <script>
+        // const alertText = ()=>{
+        //     alert('Whatsup')
+        // }
+        const button = document.getElementById("button")
+        button.addEventListener("mouseover", (e)=>{
+            button.style.backgroundColor = `rgb(${Math.round(Math.random() * 254) + 1}, ${Math.round(Math.random() * 254) + 1}, ${Math.round(Math.random() * 254) + 1})`;
+            document.body.style.backgroundColor =  `rgb(${Math.round(Math.random() * 254) + 1}, ${Math.round(Math.random() * 254) + 1}, ${Math.round(Math.random() * 254) + 1})`;
+            
+        })
+        const input = document.getElementById("inp")
+        input.addEventListener("keyup", (e)=> {
+            console.log(e.target.value);
+            result.innerHTML = e.target.value
+
+        })
+        // document.body.style.background-color;
+        // body.addEventListener("click", ()=>{
+        //     Math.round(Math.random() * 254) + 1;
+        // }) 
+    </script>
+</body>
+</html>
